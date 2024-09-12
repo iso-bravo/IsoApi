@@ -23,7 +23,7 @@ namespace IsoApi.Controllers
             return await _context.Items.ToListAsync();
         }
 
-        // GET: api/Items/5
+        // GET: api/Items/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Item>> GetItem(int id)
         {
@@ -47,7 +47,7 @@ namespace IsoApi.Controllers
             return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item);
         }
 
-        // PUT: api/Items/5
+        // PUT: api/Items/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> PutItem(int id, Item item)
         {
@@ -77,7 +77,7 @@ namespace IsoApi.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Items/5
+        // DELETE: api/Items/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteItem(int id)
         {
